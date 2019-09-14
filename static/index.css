@@ -1,0 +1,201 @@
+@font-face{
+	font-family:heveltica5;
+	src: url("fonts/heveltica5/HelveticaNeue-Light.woff")
+}
+
+#search:focus{
+	outline: none;
+}
+body{
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+
+	font-family:heveltica5;
+}
+
+#login_div{
+    position:absolute;
+    width:100%;left:0%;
+    height:100%;top:0%;
+    background-color:#2a9ee5/*#33ceff*/;
+}
+
+#login_form{
+    position:absolute;
+    top:37%;
+    width:80%;left:10%;
+    opacity:0.9;
+}
+
+#title{
+    font-size:2.9em;
+    text-align:center;
+    position:absolute;
+    top:10%;
+    width:100%;
+    color:#33ceff/*#2a9ee5*/;
+    opacity:0.7;
+}
+
+.li{
+}
+
+h3,h4{
+    text-indent:5px;
+}
+
+.row{
+    width:100%;
+    margin:5px;
+}
+
+.key,.key2{
+    float:left;
+    width:40%;
+    text-align:left;
+    text-indent:5px;
+    line-height:32px;
+}
+
+.value,.value2{
+    float:left;
+    width:60%;
+}
+
+.key2{width:30%;}
+.value2{width:70%;}
+
+.back, .next{
+    font-size:1.6em;
+}
+
+.back{
+    float:left;
+}
+.next{
+    float:right;
+}
+
+.back:hover, .next:hover{
+    cursor:pointer;
+}
+
+#loading{
+    display:none;
+}
+
+#watermark{
+    z-index:-1;
+
+    position:fixed;
+
+    top:35%;
+    opacity:0.03;
+
+    margin-left: auto;
+    margin-right: auto;
+    
+    display:none;
+
+    width:50%;left:25%;
+}
+
+#jermlogo{
+    position:fixed;
+    bottom:2px;
+    width:80%;left:10%;
+    text-align:right;
+    font-size:0.7em;
+    
+    color:black;
+    z-index:2;
+}
+
+#search_div{
+	width:98vw;
+	margin-left:1vw;
+	height:98vh;
+	margin-top:1vh;
+}
+
+#search_results{
+	/*border:1px solid black;*/
+	max-height:75%;
+	overflow:auto;
+}
+
+.time{
+	background-color:#aba;
+	text-align:center;
+	font-weight:bold;
+	opacity:0.8;
+	color:#000;
+	font-size:1.2em;
+	margin-bottom:10px;
+}
+
+.bus_entry{
+	/*border:1px solid black;*/
+	padding-bottom:10px;
+	margin-top:10px;
+/*
+	border-bottom: 1px solid #ccc;
+	border-radius:5px;
+*/
+}
+
+.bus-icon{
+	width:100px;
+	height:100px;
+	float:left;
+	margin-right:10px;
+	border:1px solid #ccc;
+	border-radius:20px;
+}
+
+.bus-details{
+}
+
+.bus-name{
+	font-weight:bold;
+	font-size:1.3em;
+	display:block;
+	margin-top:-15px;
+}
+
+.bus-price{
+	font-size:1.5em;
+	display:block;
+}
+
+.bus-route{
+	overflow:auto;
+	display:block;
+}
+
+.blured{
+	filter: blur(3px);
+	-webkit-filter: blur(3px);
+}
+.noblur{
+	filter: blur(0px);
+	-webkit-filter: blur(0px);
+}
+
+.brow{
+	float:left;
+	width:100%;
+	margin-bottom:10px;
+}
+.bkey{
+	float:left;
+	width:30%;
+	font-weight:bold;
+}
+.bvalue{
+	float:left;
+	width:60%;
+	overflow:auto;
+}

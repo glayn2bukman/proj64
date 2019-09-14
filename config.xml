@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<widget id="org.jerm.tambula" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Tambula</name>
+    <description>Book a bus from or to uganda</description>
+
+    <author email="bukman@jermtechnology.com" href="http://www.jermtechnology.com">Jerm Technology</author>
+    <content src="index.html" />
+
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="android-minSdkVersion" value="14"/>
+
+    <feature name="App">
+        <param name="android-package" value="org.apache.cordova.App" />
+    </feature>
+
+    <!-- use latest version of phonegap...this version is displayed in the phonegap web -->
+    <!-- <preference name="phonegap-version" value="cli-6.5.0" /> -->
+
+    <allow-navigation href="*" />
+    <access origin="*" />
+
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <allow-intent href="market:*" />
+
+    <icon src="data/logo.png" gap:role="default" />
+
+    <plugin name="cordova-plugin-whitelist" />
+    <!--<plugin name="cordova-plugin-vibration" />-->
+    <plugin name="cordova-plugin-sqlite" />
+    <plugin name="cordova-plugin-device" />
+    
+    <plugin name="cordova-plugin-geolocation" version="2.1.0" />
+    <!--<plugin name="org.apache.cordova.geolocation" version="0.3.6" />-->
+    
+    <plugin name="cordova-plugin-x-toast" />
+    <plugin name="cordova-plugin-network-information" />
+
+    <plugin name="cordova-plugin-fastrde-checkgps" spec="https://github.com/fastrde/cordova-plugin-fastrde-checkgps" />
+
+    <!--
+    <plugin name="phonegap-plugin-barcodescanner" spec="https://github.com/jrontend/phonegap-plugin-barcodescanner" />
+    
+    <plugin name="cordova-plugin-blutooth-printer" spec="https://github.com/srehanuddin/Cordova-Plugin-Bluetooth-Printer" />
+
+    <plugin name="cordova-plugin-thermalprint" /> 
+    -->
+
+</widget>
+

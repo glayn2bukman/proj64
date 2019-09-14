@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">        
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+
+        <title>Tambula</title>
+    
+        <link rel="stylesheet" href="static/bootstrap-3.3.7/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="static/loading.css">
+        <link rel="stylesheet" href="static/index.css">
+
+        <!-- jQuery library -->
+        <script src="static/jquery-3.3.1.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="static/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+        <script src="static/localforage.nopromises.min.js"></script>
+
+        <script src="static/globals.js"></script>
+        <script src="static/index.js"></script>
+        <script src="static/data.js"></script>
+        <script src="static/CircleType.min.js"></script>
+
+        <!-- sweet alert -->
+        <script src="static/sweetalert/sweetalert.min.js"></script>
+        <link rel="stylesheet" href="static/sweetalert/sweetalert.css">
+
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+ 
+        <link id="theme" rel="stylesheet" href="">
+    </head>
+
+    <body oncontextmenu="return false;">
+
+        <img id='watermark' src='data/logo.png'>
+
+        <div class="modal fade" id="book_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" style2="width:96%;" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+				<div class='brow'>
+					<span class='bkey'>Trip</span>
+					<span class='bvalue'>
+						<span id='bstart'></span>
+						-
+						<span id='bdest'></span>
+					</span>
+				</div>
+				<div class='brow'>
+					<span class='bkey'>Route</span>
+					<span class='bvalue'>Via
+						<span id='bvia'></span>
+					</span>
+				</div>
+				<div class='brow'>
+					<span class='bkey'>Transporter</span>
+					<span class='bvalue' id='btransporter'></span>
+				</div>
+				<div class='brow'>
+					<span class='bkey'>Departure</span>
+					<span class='bvalue'>
+						<input type='date' style='max-width:65%;' id='bdate'>
+						<span id='btime'></span>
+					</span>
+				</div>
+
+				<div class='brow'>
+					<span class='bkey'>Price</span>
+					<span class='bvalue'>
+						UGX <span id='bprice'>30,000</span>
+					</span>
+				</div>
+
+				<div class='brow'>
+					<span class='bkey'>Payment</span>
+					<label class='bvalue' style='font-weight:normal;'>
+						<input id='bcredit' type='radio' value='credit' name='bradio' checked=true  onchange='document.getElementById("bmmnumber_div").style.display="none";'>
+						Use My Credit
+					</label>					
+				</div>
+				<div class='brow' style='margin-top:-15px;'>
+					<span class='bkey' style='opacity:0;'>.</span>
+					<label class='bvalue' style='font-weight:normal;'>
+						<input type='radio' value='mobilemoney' name='bradio' onchange='document.getElementById("bmmnumber_div").style.display="block";'>
+						Use Mobile Money
+					</label>					
+				</div>
+
+				<div class='brow' id='bmmnumber_div' style='display:none;'>
+					<span class='bkey' style='opacity:0;'>.</span>
+					<div class="bvalue input-group">
+						<span class="input-group-addon">+256</span>
+						<input id="bMMnumber" type="number" class="form-control li" placeholder="7--------">
+					</div>
+				</div>
+
+
+				<div class='brow' style='opacity:0;'>.</div>
+				<div style='text-align:right;'>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+					<button id='rbtn' type="button" class="btn btn-success" onclick='_book()'>Book</button>
+				</div>
+
+              </div>
+          </div>
+        </div></div>
+        
+        <div id='login_div' style="display:none2">
+            <h1 id='title'>Tambula</h1>
+            <div id='login_form'>
+                <div class="input-group" style='margin-bottom:10px;'>
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input id="uname" type="text" class="form-control li" name="uname" placeholder="Username">
+                </div>
+                <div class="input-group" style='margin-bottom:20px;'>
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input id="pswd" type="password" class="form-control li" name="pswd" placeholder="Password">
+                </div>
+                <div>
+                    <button class='btn btn-info' style='width:40%;float:right;background:white;color:black;' onclick='login()'>Login</button>
+                </div>
+            </div>
+            
+            <span id='jermlogo'>Powered by JERM Technology</span>
+        </div>
+
+		<div id="search_div" style="display:none;">
+			<div class="input-group" style='margin-bottom:10px;'>
+				<span class="input-group-addon">Start Point</span>
+				<select class='form-control' id='from'></select>
+			</div>
+			<div class="input-group" style='margin-bottom:20px;'>
+				<span class="input-group-addon">Destination</span>
+				<select class='form-control' id='dest'></select>
+			</div>
+			
+			<div style='text-align:center; margin-top:-10px;margin-bottom:10px;'>
+				<button id='search' class='btn btn-info cbtn' style='border-radius:20px;' onclick='search()'>Find Buses</button>
+			</div>
+			
+			<div id="search_results" style='display:none2;'></div>
+		</div>
+
+		<!--
+			<div>
+				<span class='back' style='color:#ff335b;'>
+					<span><i class="glyphicon glyphicon-chevron-left"></i></span>Back
+				</span>
+				<span class='next' style='color:#335bff;' onclick="next()">
+					Next<span><i class="glyphicon glyphicon-chevron-right"></i></span>
+				</span>
+			</div>
+		-->
+
+        <div id='loading' class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </body>
+
+</html>
